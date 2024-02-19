@@ -13,10 +13,14 @@
   <body>
     <nav>
       <a href="/">Bulletin Board</a>
-      <a href="/users/sign_up">User sign up</a>
-      <a href="/users/sign_in">User sign in</a>
-      <a href="/users/sign_out">User sign out</a>
-      <a href="/users/edit">Edit</a>
+      <% if current_user != nil%>
+
+        <a href="/users/sign_out">User sign out</a>
+        <a href="/users/edit">Edit</a>
+      <% else %>
+        <a href="/users/sign_up">User sign up</a>
+        <a href="/users/sign_in">User sign in</a>
+      <% end %>
     </nav>
 
     <hr>
